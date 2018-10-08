@@ -1,0 +1,64 @@
+{{username}}
+{{classroom}}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      body {
+        background-color: #264159;
+      }
+
+
+    </style>
+
+    <script>
+      // let u_name = '{{usname}}';
+      let usrname = '{{ username }}';
+      let classroom = '{{ classroom }}';
+      console.log(usrname);             
+      window.onload = function() {
+        document.getElementById("myClass").value = classroom;
+        document.getElementById("myName").value = usrname;
+      }
+    </script>
+</head>
+<body>
+    
+  <div class="text-center">
+    <h1 class="display-1" style="color: white; font-size: 48">Home</h1>
+    <h5 class="text-muted" style="font-size: 28">Dashboard</h5>
+  </div>
+  
+  <!-- <div style="padding: 25">
+    <a class="btn btn-default" href="repl">Access the REPL</a>
+  </div> -->
+  
+  <div style="padding: 25">
+    <form class="btn btn-default" action = "/repl" method = "POST">
+      <input name = "username" type="hidden" id="myName">
+      <input name = 'classroom' type = "hidden" id = 'myClass'>
+      <input type = 'submit' value = 'AccessREPL'>
+    </form>
+  </div>
+
+ 
+
+</body>
+</html>

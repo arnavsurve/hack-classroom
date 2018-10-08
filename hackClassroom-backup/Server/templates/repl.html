@@ -1,0 +1,55 @@
+{{ username }}{{ classroom }}{{ result }}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>REPL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body {
+      background-color: #264159;
+      color: white;
+    }
+  </style>
+
+  <script>
+    let username = '{{ username }}';
+    let classroom = '{{ classroom }}'
+    let result = '{{ result }}';
+    window.onload = function() {
+       //when the document is finished loading, replace everything
+       //between the <a ...> </a> tags with the value of splitText
+    document.getElementById('myName').value = username;
+    document.getElementById('myClass').value = classroom;
+    }
+  </script>
+</head>
+
+<body>
+
+<form action = "/repl" method = "POST">
+  <input name="username" type="hidden" id="myName"></input>
+  <input name = "classroom" type = "hidden" id = "myClass">
+  <!-- <p>Script: <input cols="40" rows="5" type = "text" name = "Script" /></p> -->
+  <p>Script: <textarea type="text" name="Script" cols="40" rows="5" style="background-color: black; color: white;"></textarea> </p>
+  <p><input style="color: black;" type = "submit" value = "Submit REPL script" /></p>
+  <p>>> {{ result }}</p>
+</form>
+
+</body>
+
+</html>

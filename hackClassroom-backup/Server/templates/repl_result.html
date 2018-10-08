@@ -1,0 +1,23 @@
+{{reslt}}
+{{usrname}}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>REPL Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+      let result = '{{reslt}}';
+      alert('<p>'+result+'</p>');
+    </script>
+
+</head>
+<body>
+  <form action="/repl">
+    <!-- <input type="submit" value="Return" /> -->
+    <input type="button" value="Refresh Page" onClick="history.go(0)"> 
+  </form> 
+</body>
+</html>
